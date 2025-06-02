@@ -33,6 +33,7 @@ class BotonesControl extends StatelessWidget {
         ElevatedButton(onPressed:  () {
           controllerGame.reset();
           controllerTurn.reset();
+          playerController.reiniciarPuntajes();
           }, child: const Text('Reset')),
             const SizedBox(width: 10),
         ElevatedButton(onPressed:  () {
