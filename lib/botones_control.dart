@@ -20,17 +20,22 @@ class BotonesControl extends StatelessWidget {
         ElevatedButton(onPressed:  () {
           controllerGame.start();
           controllerTurn.start();
-          }, child: const Text('Iniciar')),
+          }, child: const Text('Start')),
             const SizedBox(width: 10),
         ElevatedButton(onPressed:  () {
           controllerGame.pause();
           controllerTurn.pause();
-          }, child: const Text('Detener')),
+          }, child: const Text('Pause')),
             const SizedBox(width: 10),
         ElevatedButton(onPressed:  () {
           controllerGame.reset();
           controllerTurn.reset();
-          }, child: const Text('Reiniciar')),
+          }, child: const Text('Reset')),
+            const SizedBox(width: 10),
+        ElevatedButton(onPressed:  () {
+          controllerGame.pause();
+          controllerTurn.reset();
+          }, child: const Text('Next')),
       ],
     );
   }
