@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tf_assistant_app/cronometro_controller.dart';
+import 'package:tf_assistant_app/player_controller.dart';
 
 class BotonesControl extends StatelessWidget {
   final CronometroController controllerGame;
   final CronometroController controllerTurn;
+  final PlayerController playerController;
 
 
   const BotonesControl({
     super.key, 
     required this.controllerGame, 
-    required this.controllerTurn
+    required this.controllerTurn, 
+    required this.playerController
     });
 
   @override
@@ -35,6 +38,7 @@ class BotonesControl extends StatelessWidget {
         ElevatedButton(onPressed:  () {
           controllerGame.pause();
           controllerTurn.reset();
+          playerController.nextPlayer();
           }, child: const Text('Next')),
       ],
     );
