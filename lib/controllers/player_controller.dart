@@ -7,7 +7,8 @@ class PlayerController extends ChangeNotifier {
   final ValueNotifier<int> currentPlayerNotifier = ValueNotifier<int>(1);
   late final ValueNotifier<Map<int, int>> puntajesNotifier;
 
-  PlayerController({this.totalPlayers = 4}) {
+
+  PlayerController(this.totalPlayers) {
     final Map<int, int> mapaInicial = {
       for (int i = 1; i <= totalPlayers; i++) i: 0
     };

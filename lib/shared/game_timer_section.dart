@@ -17,7 +17,7 @@ class GameTimerSection extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Tiempo de la partida"),
+            Text("⏱ Tiempo de la partida"),
             CronometroWidget(controller: _controllerGame),
           ]
         )
