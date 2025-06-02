@@ -14,7 +14,14 @@ class GameTimerSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Center(
-        child: CronometroWidget(controller: _controllerGame)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Tiempo de la partida"),
+            CronometroWidget(controller: _controllerGame),
+          ]
+        )
+      ),
     );
   }
 }

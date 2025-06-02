@@ -20,6 +20,7 @@ class TurnTimerSection extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Text("Tiempo del turno"),
             CronometroWidget(controller: _controllerTurn),
             const SizedBox(height: 10),
 
@@ -29,7 +30,7 @@ class TurnTimerSection extends StatelessWidget {
               builder: (context, currentPlayer, _) {
                 return Column(
                   children: [
-                    Text('Turno Jugador $currentPlayer',
+                    Text('Turno del Jugador $currentPlayer',
                         style: const TextStyle(fontSize: 16)),
                     ValueListenableBuilder<Map<int, int>>(
                       valueListenable: playerController.puntajesNotifier,
