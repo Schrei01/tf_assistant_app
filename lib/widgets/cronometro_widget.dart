@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'cronometro_controller.dart'; // Asegúrate de importar tu controlador
+import '../controllers/cronometro_controller.dart'; // Asegúrate de importar tu controlador
 
 class CronometroWidget extends StatelessWidget {
   final CronometroController controller;
 
-  const CronometroWidget({super.key, required this.controller});
+  const CronometroWidget({
+    super.key, 
+    required this.controller
+    });
 
   String _formatTime(int totalSeconds) {
     final minutes = totalSeconds ~/ 60;
