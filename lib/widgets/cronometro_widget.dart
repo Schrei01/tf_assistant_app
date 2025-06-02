@@ -4,7 +4,10 @@ import '../controllers/cronometro_controller.dart'; // Asegúrate de importar tu
 class CronometroWidget extends StatelessWidget {
   final CronometroController controller;
 
-  const CronometroWidget({super.key, required this.controller});
+  const CronometroWidget({
+    super.key, 
+    required this.controller
+    });
 
   String _formatTime(int totalSeconds) {
     final minutes = totalSeconds ~/ 60;
