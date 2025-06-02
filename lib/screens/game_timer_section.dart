@@ -13,7 +13,8 @@ class GameTimerSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Center(child: CronometroWidget(controller: _controllerGame)),
+      child: Center(
+        child: CronometroWidget(controller: _controllerGame)),
     );
   }
 }
