@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tf_assistant_app/cronometro_controller.dart';
-import 'package:tf_assistant_app/cronometro_widget.dart';
-import 'package:tf_assistant_app/player_controller.dart';
+import 'package:tf_assistant_app/controllers/cronometro_controller.dart';
+import 'package:tf_assistant_app/widgets/cronometro_widget.dart';
+import 'package:tf_assistant_app/controllers/player_controller.dart';
 
 class TurnTimerSection extends StatelessWidget {
   

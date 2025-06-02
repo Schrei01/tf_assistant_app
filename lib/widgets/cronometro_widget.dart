@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cronometro_controller.dart'; // Asegúrate de importar tu controlador
+import '../controllers/cronometro_controller.dart'; // Asegúrate de importar tu controlador
 
 class CronometroWidget extends StatelessWidget {
   final CronometroController controller;

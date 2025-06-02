@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tf_assistant_app/player_controller.dart';
+import 'package:tf_assistant_app/controllers/player_controller.dart';
 import 'package:tf_assistant_app/screens/botones_control.dart';
-import 'package:tf_assistant_app/cronometro_controller.dart';
+import 'package:tf_assistant_app/controllers/cronometro_controller.dart';
 import 'package:tf_assistant_app/screens/game_timer_section.dart';
 import 'package:tf_assistant_app/screens/turn_timer_section.dart';
 
