@@ -6,8 +6,8 @@ import 'package:tf_assistant_app/cronometro_widget.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final CronometroController _controllerGame = CronometroController(segundosIniciales: 60);
-  final CronometroController _controllerTurn = CronometroController(segundosIniciales: 5);
+  final CronometroController _controllerGame = CronometroController(minutosIniciales: 60, segundosIniciales: 0);
+  final CronometroController _controllerTurn = CronometroController(minutosIniciales: 5, segundosIniciales: 0);
 
   MyApp({super.key});
 

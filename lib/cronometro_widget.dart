@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:tf_assistant_app/cronometro_controller.dart';
+import 'cronometro_controller.dart'; // Asegúrate de importar tu controlador
 
 class CronometroWidget extends StatelessWidget {
   final CronometroController controller;
 
   const CronometroWidget({super.key, required this.controller});
 
-  // String _formatTime(int seconds) {
-  //   final minutes = (seconds ~/ 60).toString().padLeft(2, '0');
-  //   final secs = (seconds % 60).toString().padLeft(2, '0');
-  //   return '$minutes:$secs';
-  // }
+  String _formatTime(int totalSeconds) {
+    final minutes = totalSeconds ~/ 60;
+    final seconds = totalSeconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+  }
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<int>(
       valueListenable: controller.tiempo,
-      builder: (context, tiempo, _) {
+      builder: (context, tiempoRestante, _) {
         return Text(
-          '$tiempo',
-          style: const TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+          _formatTime(tiempoRestante),
+          style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
         );
       },
     );

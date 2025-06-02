@@ -3,15 +3,20 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class CronometroController extends ChangeNotifier {
+  final int minutosIniciales;
   final int segundosIniciales;
+
   late int _segundosRestantes;
   Timer? _timer;
 
   final ValueNotifier<int> tiempo = ValueNotifier<int>(0);
   final ValueNotifier<bool> estaCorriendo = ValueNotifier<bool>(false);
 
-  CronometroController({required this.segundosIniciales}) {
-    _segundosRestantes = segundosIniciales;
+  CronometroController({
+    required this.minutosIniciales,
+    required this.segundosIniciales,
+  }) {
+    _segundosRestantes = minutosIniciales * 60 + segundosIniciales;
     tiempo.value = _segundosRestantes;
   }
 
@@ -36,7 +41,7 @@ class CronometroController extends ChangeNotifier {
 
   void reset() {
     pause();
-    _segundosRestantes = segundosIniciales;
+    _segundosRestantes = minutosIniciales * 60 + segundosIniciales;
     tiempo.value = _segundosRestantes;
   }
 
