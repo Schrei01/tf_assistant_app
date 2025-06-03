@@ -6,6 +6,8 @@ import 'package:tf_assistant_app/controllers/cronometro_controller.dart';
 import 'package:tf_assistant_app/widgets/botones_control.dart';
 import 'package:tf_assistant_app/shared/game_timer_section.dart';
 import 'package:tf_assistant_app/shared/turn_timer_section.dart';
+import 'package:tf_assistant_app/widgets/drawer_widget.dart';
+
 
 class PrincipalScreen extends StatelessWidget {
 
@@ -26,29 +28,36 @@ class PrincipalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final CronometroController controllerGame = CronometroController(minutosIniciales: minutosPartida, segundosIniciales: segundosPartida);
-    final CronometroController controllerTurn = CronometroController(minutosIniciales: minutosTurno, segundosIniciales: segundosTurno);
+    final CronometroController controllerTurn = CronometroController(
+      minutosIniciales: minutosTurno,
+      segundosIniciales: segundosTurno
+      )..onFinish = () {
+        controllerGame.pause();
+      };
     final playerController = PlayerController(numeroJugadores);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TF Assistant')
+        title: const Text('TF Assistant'),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(
+              Icons.menu_book,
+              color: Color.fromARGB(255, 125, 58, 212),
+              ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         ),
-      
+      ),
+      drawer: DrawerWidget(),
       body: Column(
         children: [
-          GameTimerSection(
-            controllerGame: controllerGame
-            ),
-          TurnTimerSection(
-            controllerTurn: controllerTurn,
-            playerController: playerController
-            ), // Puedes usar este para otra cosa
-          ButtonsSection(
-            controllerGame: controllerGame, 
-            controllerTurn: controllerTurn,
-            playerController: playerController,
-            ),// Tu contenido aquí...
+          GameTimerSection(controllerGame: controllerGame, playerController: playerController),
+          TurnTimerSection(controllerTurn: controllerTurn, playerController: playerController),
+          ButtonsSection(controllerGame: controllerGame, controllerTurn: controllerTurn, playerController: playerController),
         ],
       ),
     );

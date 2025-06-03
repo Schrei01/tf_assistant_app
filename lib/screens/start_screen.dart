@@ -32,7 +32,7 @@ class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Configurar partida')),
+      appBar: AppBar(title: const Text('⚙️ Configurar partida')),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
@@ -63,7 +63,8 @@ class _StartScreenState extends State<StartScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                const Text('🔁 Tiempo por turno'),
+                const Text('🕰️ Tiempo por turno'),
+
                 Row(
                   children: [
                     Expanded(

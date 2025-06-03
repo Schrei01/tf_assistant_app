@@ -20,7 +20,7 @@ class TurnTimerSection extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("🔁 Tiempo del turno"),
+            Text("🕰️ Tiempo del turno"),
             CronometroWidget(controller: _controllerTurn),
             const SizedBox(height: 10),
 

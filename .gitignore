@@ -15,6 +15,9 @@ windows/
 linux/
 macos/
 
+android/app/build/
+
+
 # IntelliJ related
 *.iml
 *.ipr
