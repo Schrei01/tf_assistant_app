@@ -12,6 +12,8 @@ class CronometroController extends ChangeNotifier {
   final ValueNotifier<int> tiempo = ValueNotifier<int>(0);
   final ValueNotifier<bool> estaCorriendo = ValueNotifier<bool>(false);
 
+  VoidCallback? onFinish;
+
   CronometroController({
     required this.minutosIniciales,
     required this.segundosIniciales,
@@ -30,6 +32,7 @@ class CronometroController extends ChangeNotifier {
         tiempo.value = _segundosRestantes;
       } else {
         pause();
+        onFinish?.call();
       }
     });
   }

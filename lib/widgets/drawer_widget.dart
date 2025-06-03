@@ -13,7 +13,7 @@ class DrawerWidget extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 114, 17, 241)),
+            decoration: BoxDecoration(color: Color.fromARGB(255, 125, 58, 212)),
             child: Text('📚 Biblioteca de guías', style: TextStyle(color: Colors.white, fontSize: 20)),
           ),
           ListTile(

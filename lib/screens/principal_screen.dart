@@ -28,7 +28,12 @@ class PrincipalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CronometroController controllerGame = CronometroController(minutosIniciales: minutosPartida, segundosIniciales: segundosPartida);
-    final CronometroController controllerTurn = CronometroController(minutosIniciales: minutosTurno, segundosIniciales: segundosTurno);
+    final CronometroController controllerTurn = CronometroController(
+      minutosIniciales: minutosTurno,
+      segundosIniciales: segundosTurno
+      )..onFinish = () {
+        controllerGame.pause();
+      };
     final playerController = PlayerController(numeroJugadores);
 
     return Scaffold(
@@ -36,7 +41,10 @@ class PrincipalScreen extends StatelessWidget {
         title: const Text('TF Assistant'),
         leading: Builder(
           builder: (context) => IconButton(
-            icon: const Icon(Icons.menu_book),
+            icon: const Icon(
+              Icons.menu_book,
+              color: Color.fromARGB(255, 125, 58, 212),
+              ),
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },
@@ -46,7 +54,7 @@ class PrincipalScreen extends StatelessWidget {
       drawer: DrawerWidget(),
       body: Column(
         children: [
-          GameTimerSection(controllerGame: controllerGame),
+          GameTimerSection(controllerGame: controllerGame, playerController: playerController),
           TurnTimerSection(controllerTurn: controllerTurn, playerController: playerController),
           ButtonsSection(controllerGame: controllerGame, controllerTurn: controllerTurn, playerController: playerController),
         ],
