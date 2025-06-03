@@ -34,6 +34,14 @@ class PrincipalScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('TF Assistant'),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu_book),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        ),
       ),
       drawer: DrawerWidget(),
       body: Column(
