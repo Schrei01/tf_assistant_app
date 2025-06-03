@@ -4,6 +4,7 @@ class PlayerController extends ChangeNotifier {
   int _currentPlayer = 1;
   final int totalPlayers;
   final ValueNotifier<int> ronda = ValueNotifier<int>(1);
+
   final ValueNotifier<int> currentPlayerNotifier = ValueNotifier<int>(1);
   late final ValueNotifier<Map<int, int>> puntajesNotifier;
 
@@ -17,9 +18,11 @@ class PlayerController extends ChangeNotifier {
 
   void nextPlayer() {
     _currentPlayer = _currentPlayer % totalPlayers + 1;
+
     if (_currentPlayer == 1) {
       ronda.value++;
     }
+
     currentPlayerNotifier.value = _currentPlayer;
     notifyListeners();
   }

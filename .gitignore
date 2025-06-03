@@ -14,7 +14,9 @@ migrate_working_dir/
 windows/
 linux/
 macos/
+
 android/app/build/
+
 
 # IntelliJ related
 *.iml

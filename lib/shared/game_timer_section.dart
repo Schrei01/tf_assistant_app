@@ -12,7 +12,7 @@ class GameTimerSection extends StatelessWidget {
     super.key,
     required CronometroController controllerGame, required this.playerController,
   }) : _controllerGame = controllerGame;
-
+  
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -28,6 +28,7 @@ class GameTimerSection extends StatelessWidget {
                 return Text("🔁 Ronda: $ronda", style: const TextStyle(fontSize: 18));
               },
             ),
+
           ]
         )
       ),

@@ -64,6 +64,7 @@ class _StartScreenState extends State<StartScreen> {
                 ),
                 const SizedBox(height: 20),
                 const Text('🕰️ Tiempo por turno'),
+
                 Row(
                   children: [
                     Expanded(

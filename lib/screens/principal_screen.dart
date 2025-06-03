@@ -8,6 +8,7 @@ import 'package:tf_assistant_app/shared/game_timer_section.dart';
 import 'package:tf_assistant_app/shared/turn_timer_section.dart';
 import 'package:tf_assistant_app/widgets/drawer_widget.dart';
 
+
 class PrincipalScreen extends StatelessWidget {
 
   final int minutosPartida;
@@ -61,7 +62,6 @@ class PrincipalScreen extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class ButtonsSection extends StatelessWidget {
