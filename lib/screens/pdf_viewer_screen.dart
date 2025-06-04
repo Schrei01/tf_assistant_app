@@ -6,8 +6,13 @@ import 'package:path_provider/path_provider.dart';
 
 class PdfViewerScreen extends StatefulWidget {
   final String assetPath;
+  final String title;
 
-  const PdfViewerScreen({super.key, required this.assetPath});
+  const PdfViewerScreen({
+    super.key, 
+    required this.assetPath, 
+    required this.title
+    });
 
   @override
   State<PdfViewerScreen> createState() => _PdfViewerScreenState();
@@ -35,7 +40,7 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Habilidades de equipo")),
+      appBar: AppBar(title: Text(widget.title)),
       body: localPath != null
           ? PDFView(filePath: localPath!)
           : const Center(child: CircularProgressIndicator()),

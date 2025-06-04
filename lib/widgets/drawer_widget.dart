@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tf_assistant_app/screens/pdf_viewer_screen.dart';
+import '../data/pdf_items.dart';
 
 class DrawerWidget extends StatelessWidget {
+  
   const DrawerWidget({
-    super.key,
+    super.key, 
   });
 
   @override
@@ -16,76 +18,23 @@ class DrawerWidget extends StatelessWidget {
             decoration: BoxDecoration(color: Color.fromARGB(255, 125, 58, 212)),
             child: Text('📚 Biblioteca de guías', style: TextStyle(color: Colors.white, fontSize: 20)),
           ),
-          ListTile(
-            leading: const Text("📜", style: TextStyle(fontSize: 20)),
-            title: const Text('Reglas extensas'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const PdfViewerScreen(
-                    assetPath: 'assets/pdfs/comprehensive_rules.pdf'
+          ...pdfItems.map((item) {
+            return ListTile(
+              leading: Text(item.emoji, style: const TextStyle(fontSize: 20)),
+              title: Text(item.title),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => PdfViewerScreen(
+                      title: item.title,
+                      assetPath: item.path,
+                    ),
                   ),
-                ),
-              ); // Cierra el drawer
-            },
-          ),
-          ListTile(
-            leading: const Text("⚡", style: TextStyle(fontSize: 20)),
-            title: const Text('Reglas rápidas'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const PdfViewerScreen(
-                    assetPath: 'assets/pdfs/manual_heroclix.pdf'
-                  ),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Text("🔥", style: TextStyle(fontSize: 20)),
-            title: const Text('Poderes y habilidades'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const PdfViewerScreen(
-                    assetPath: 'assets/pdfs/poderes_habilidades.pdf'
-                  ),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Text("🎲", style: TextStyle(fontSize: 20)),
-            title: const Text('Formatos alternativos'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const PdfViewerScreen(
-                    assetPath: 'assets/pdfs/modos_alternativos.pdf'
-                  ),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Text("🛡️", style: TextStyle(fontSize: 20)),
-            title: const Text('Habilidades de equipo'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const PdfViewerScreen(
-                    assetPath: 'assets/pdfs/team_abilities.pdf'
-                  ),
-                ),
-              );
-            },
-          ),
+                );
+              },
+            );
+          }),
         ],
       ),
     );
