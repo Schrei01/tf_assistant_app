@@ -3,6 +3,8 @@
 *.log
 *.pyc
 *.swp
+*.apk
+*.so
 .DS_Store
 .atom/
 .build/
@@ -49,3 +51,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+macos/Flutter/GeneratedPluginRegistrant.swift
+**/GeneratedPluginRegistrant.*
